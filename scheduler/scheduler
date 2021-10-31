@@ -1,0 +1,19 @@
+1.什么是scheduler
+调度器，调度 普通的restAPI 无法完成的任务
+定时触发或延时触发任务
+2.为什么需要scheduler
+系统中有异步任务
+3.scheduler通常做什么
+做异步任务，周期性任务
+
+scheduler里包含什么
+RESTful的http server：接受任务
+Timer:定时器
+Task runner：消费者生产者模型下的
+
+由Timer启动，生产者/Dispatcher和消费者/Executor直接使用channel通信
+
+1.user ->api service ->delete video
+2.api service ->scheduler ->write vide deletion record
+3.timer
+4.timer -> runner -> read wrdr ->executor ->delete video from folder
